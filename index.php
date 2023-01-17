@@ -13,7 +13,7 @@
 
     <div class="container text-center">
 
-        <form method="POST">
+        <form method="GET">
 
             <!-- Table of content -->
 
@@ -84,25 +84,55 @@
 
             <?php
 
-            // for ($x = 0; $x <= 12; $x++) {
-            //     $value$x = $_POST["firstScore"];
-            // }
 
-            $firstValue = $_POST["firstScore"];
-            $secondValue = $_POST["secondScore"];
-            $thirdValue = $_POST["thirdScore"];
-            $fourthValue = $_POST["fourthScore"];
-            $fifthValue = $_POST["fifthScore"];
-            $sixthValue = $_POST["sixthScore"];
-            $secondValue = $_POST["seventhScore"];
-            $secondValue = $_POST["eighthScore"];
-            $secondValue = $_POST["ninthScore"];
-            $secondValue = $_POST["tenthScore"];
-            $secondValue = $_POST["eleventhScore"];
-            $secondValue = $_POST["twelvethScore"];
+            // array_push($winArray, 1);
+
+            // echo count($winArray);
+
+
+            // to sort: arsort(); - asort();
 
             function createTable()
             {
+                $matchesArray = array();
+                $drawArray = array();
+                $winArray = array();
+                $loseArray = array();
+
+
+                $firstValue = $_GET["firstScore"];
+                $secondValue = $_GET["secondScore"];
+
+                $thirdValue = $_GET["thirdScore"];
+                $fourthValue = $_GET["fourthScore"];
+
+                $fifthValue = $_GET["fifthScore"];
+                $sixthValue = $_GET["sixthScore"];
+
+                $seventhScore = $_GET["seventhScore"];
+                $eighthScore = $_GET["eighthScore"];
+
+                $ninthScore = $_GET["ninthScore"];
+                $tenthScore = $_GET["tenthScore"];
+
+                $eleventhScore = $_GET["eleventhScore"];
+                $twelvethScore = $_GET["twelvethScore"];
+
+                switch ($firstValue) {
+                    case $firstValue > $secondValue:
+                        echo "Morocco won";
+                        array_push($winArray, 1);
+                        break;
+                    case $firstValue < $secondValue:
+                        echo "Croatia won";
+                        break;
+                    default:
+                        echo "Draw!";
+                }
+
+                echo "<br>";
+                echo count($winArray);
+
                 echo "<table class='table table-bordered mt-5'>
                 <thead>
                     <tr>
@@ -128,9 +158,11 @@
                         <td>0</td>
                         <td>0</td>
                         <td>0</td>
-                        <td>5</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>$firstValue</td>
+                        <td>$secondValue</td>
+                        <td>";
+                echo $firstValue - $secondValue;
+                echo "</td>
                     </tr>
                     <tr>
                         <th scope='row'>2</th>
@@ -140,9 +172,11 @@
                         <td>0</td>
                         <td>0</td>
                         <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>$secondValue</td>
+                        <td>$firstValue</td>
+                        <td>";
+                echo $secondValue - $firstValue;
+                echo "</td>
                     </tr>
                     <tr>
                         <th scope='row'>3</th>
@@ -154,7 +188,9 @@
                         <td>0</td>
                         <td>0</td>
                         <td>0</td>
-                        <td>0</td>
+                        <td>";
+                echo $firstValue - $secondValue;
+                echo "</td>
                     </tr>
                     <tr>
                         <th scope='row'>4</th>
@@ -166,51 +202,21 @@
                         <td>0</td>
                         <td>0</td>
                         <td>0</td>
-                        <td>0</td>
+                        <td>";
+                echo $firstValue - $secondValue;
+                echo "</td>
                     </tr>
                 </tbody>
                 </table>";
             }
+
             createTable();
 
             ?>
 
             <input class="btn btn-primary w-50" type="submit" name="submitButton" value="Submit">
 
-            <?php
-
-            $firstValue = $_POST["firstScore"];
-            $secondValue = $_POST["secondScore"];
-
-            if ($firstValue == null or $firstValue == "" or $firstValue == " ") $firstValue == 0;
-            if ($secondValue == null or $secondValue == "" or $secondValue == " ") $secondValue == 0;
-
-            if ($firstValue > $secondValue) {
-                echo "<br>";
-                echo "Morocco won";
-                echo "<br>";
-                echo $firstValue;
-                echo " - ";
-                echo $secondValue;
-            } elseif ($firstValue < $secondValue) {
-                echo "<br>";
-                echo "Croatia won";
-                echo "<br>";
-                echo $firstValue;
-                echo " - ";
-                echo $secondValue;
-            } else {
-                echo "<br>";
-                echo "Draw";
-                echo "<br>";
-                echo $firstValue;
-                echo " - ";
-                echo $secondValue;
-            }
-
-            ?>
         </form>
-
 
     </div>
 
