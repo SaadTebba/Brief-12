@@ -13,7 +13,7 @@
 
     <div class="container text-center">
 
-        <form method="GET">
+        <form method="POST">
 
             <!-- Table of content -->
 
@@ -31,48 +31,72 @@
                     <tr>
                         <td>Morocco</td>
                         <td>
-                            <input type="number" name="firstScore" value="0">
-                            <input type="number" name="secondScore" value="0">
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="firstScore" class="form-control" required>
+                            </div>
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="secondScore" class="form-control" required>
+                            </div>
                         </td>
                         <td>Croatia</td>
                     </tr>
                     <tr>
                         <td>Belgium</td>
                         <td>
-                            <input type="number" name="thirdScore">
-                            <input type="number" name="fourthScore">
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="thirdScore" class="form-control" required>
+                            </div>
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="fourthScore" class="form-control" required>
+                            </div>
                         </td>
                         <td>Canada</td>
                     </tr>
                     <tr>
                         <td>Belgium</td>
                         <td>
-                            <input type="number" name="fifthScore">
-                            <input type="number" name="sixthScore">
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="fifthScore" class="form-control" required>
+                            </div>
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="sixthScore" class="form-control" required>
+                            </div>
                         </td>
                         <td>Morocco</td>
                     </tr>
                     <tr>
                         <td>Croatia</td>
                         <td>
-                            <input type="number" name="seventhScore">
-                            <input type="number" name="eighthScore">
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="seventhScore" class="form-control" required>
+                            </div>
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="eighthScore" class="form-control" required>
+                            </div>
                         </td>
                         <td>Canada</td>
                     </tr>
                     <tr>
                         <td>Croatia</td>
                         <td>
-                            <input type="number" name="ninthScore">
-                            <input type="number" name="tenthScore">
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="ninthScore" class="form-control" required>
+                            </div>
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="tenthScore" class="form-control" required>
+                            </div>
                         </td>
                         <td>Belgium</td>
                     </tr>
                     <tr>
                         <td>Canada</td>
                         <td>
-                            <input type="number" name="eleventhScore">
-                            <input type="number" name="twelvethScore">
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="eleventhScore" class="form-control" required>
+                            </div>
+                            <div class="form-outline d-inline-block" style="width: 8rem;">
+                                <input type="number" name="twelvethScore" class="form-control" required>
+                            </div>
                         </td>
                         <td>Morocco</td>
                     </tr>
@@ -80,60 +104,195 @@
 
             </table>
 
+            <input class="btn btn-primary" type="submit" name="submitButton" value="Submit">
+
             <!-- Table of results -->
 
             <?php
-
-
-            // array_push($winArray, 1);
-
-            // echo count($winArray);
-
 
             // to sort: arsort(); - asort();
 
             function createTable()
             {
-                $matchesArray = array();
-                $drawArray = array();
-                $winArray = array();
-                $loseArray = array();
 
+                $matchesArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                $drawArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                $winArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                $loseArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                $goalsFor = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                $goalsAgainst = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
 
-                $firstValue = $_GET["firstScore"];
-                $secondValue = $_GET["secondScore"];
+                $firstValue = $_POST["firstScore"];
+                $secondValue = $_POST["secondScore"];
 
-                $thirdValue = $_GET["thirdScore"];
-                $fourthValue = $_GET["fourthScore"];
+                $thirdValue = $_POST["thirdScore"];
+                $fourthValue = $_POST["fourthScore"];
 
-                $fifthValue = $_GET["fifthScore"];
-                $sixthValue = $_GET["sixthScore"];
+                $fifthValue = $_POST["fifthScore"];
+                $sixthValue = $_POST["sixthScore"];
 
-                $seventhScore = $_GET["seventhScore"];
-                $eighthScore = $_GET["eighthScore"];
+                $seventhValue = $_POST["seventhScore"];
+                $eighthValue = $_POST["eighthScore"];
 
-                $ninthScore = $_GET["ninthScore"];
-                $tenthScore = $_GET["tenthScore"];
+                $ninthValue = $_POST["ninthScore"];
+                $tenthValue = $_POST["tenthScore"];
 
-                $eleventhScore = $_GET["eleventhScore"];
-                $twelvethScore = $_GET["twelvethScore"];
+                $eleventhValue = $_POST["eleventhScore"];
+                $twelvethValue = $_POST["twelvethScore"];
+
+                // Covers win & lose & draw cases
 
                 switch ($firstValue) {
                     case $firstValue > $secondValue:
-                        echo "Morocco won";
-                        array_push($winArray, 1);
+                        $winArray["Morocco"]++;
+                        $loseArray["Croatia"]++;
+                        $matchesArray["Croatia"]++;
+                        $matchesArray["Morocco"]++;
                         break;
                     case $firstValue < $secondValue:
-                        echo "Croatia won";
+                        $winArray["Croatia"]++;
+                        $loseArray["Morocco"]++;
+                        $matchesArray["Croatia"]++;
+                        $matchesArray["Morocco"]++;
                         break;
+                    case $firstValue == $secondValue:
                     default:
-                        echo "Draw!";
-                }
+                        $drawArray["Morocco"]++;
+                        $drawArray["Croatia"]++;
+                        $matchesArray["Croatia"]++;
+                        $matchesArray["Morocco"]++;
+                };
+
+                switch ($thirdValue) {
+                    case $thirdValue > $fourthValue:
+                        $winArray["Belgium"]++;
+                        $loseArray["Canada"]++;
+                        $matchesArray["Canada"]++;
+                        $matchesArray["Belgium"]++;
+                        break;
+                    case $thirdValue < $fourthValue:
+                        $winArray["Canada"]++;
+                        $loseArray["Belgium"]++;
+                        $matchesArray["Canada"]++;
+                        $matchesArray["Belgium"]++;
+                        break;
+                    case $thirdValue == $fourthValue:
+                    default:
+                        $drawArray["Belgium"]++;
+                        $drawArray["Canada"]++;
+                        $matchesArray["Canada"]++;
+                        $matchesArray["Belgium"]++;
+                };
+
+                switch ($fifthValue) {
+                    case $fifthValue > $sixthValue:
+                        $winArray["Belgium"]++;
+                        $loseArray["Morocco"]++;
+                        $matchesArray["Belgium"]++;
+                        $matchesArray["Morocco"]++;
+                        break;
+                    case $fifthValue < $sixthValue:
+                        $winArray["Morocco"]++;
+                        $loseArray["Belgium"]++;
+                        $matchesArray["Belgium"]++;
+                        $matchesArray["Morocco"]++;
+                        break;
+                    case $fifthValue == $sixthValue:
+                    default:
+                        $drawArray["Belgium"]++;
+                        $drawArray["Morocco"]++;
+                        $matchesArray["Belgium"]++;
+                        $matchesArray["Morocco"]++;
+                };
+
+                switch ($seventhValue) {
+                    case $seventhValue > $eighthValue:
+                        $winArray["Croatia"]++;
+                        $loseArray["Canada"]++;
+                        $matchesArray["Canada"]++;
+                        $matchesArray["Croatia"]++;
+                        break;
+                    case $seventhValue < $eighthValue:
+                        $winArray["Canada"]++;
+                        $loseArray["Croatia"]++;
+                        $matchesArray["Canada"]++;
+                        $matchesArray["Croatia"]++;
+                        break;
+                    case $seventhValue == $eighthValue:
+                    default:
+                        $drawArray["Croatia"]++;
+                        $drawArray["Canada"]++;
+                        $matchesArray["Canada"]++;
+                        $matchesArray["Croatia"]++;
+                };
+
+                switch ($ninthValue) {
+                    case $ninthValue > $tenthValue:
+                        $winArray["Croatia"]++;
+                        $loseArray["Belgium"]++;
+                        $matchesArray["Belgium"]++;
+                        $matchesArray["Croatia"]++;
+                        break;
+                    case $ninthValue < $tenthValue:
+                        $winArray["Belgium"]++;
+                        $loseArray["Croatia"]++;
+                        $matchesArray["Belgium"]++;
+                        $matchesArray["Croatia"]++;
+                        break;
+                    case $ninthValue == $tenthValue:
+                    default:
+                        $drawArray["Croatia"]++;
+                        $drawArray["Belgium"]++;
+                        $matchesArray["Belgium"]++;
+                        $matchesArray["Croatia"]++;
+                };
+
+                switch ($eleventhValue) {
+                    case $eleventhValue > $twelvethValue:
+                        $winArray["Canada"]++;
+                        $loseArray["Morocco"]++;
+                        $matchesArray["Morocco"]++;
+                        $matchesArray["Canada"]++;
+                        break;
+                    case $eleventhValue < $twelvethValue:
+                        $winArray["Morocco"]++;
+                        $loseArray["Canada"]++;
+                        $matchesArray["Morocco"]++;
+                        $matchesArray["Canada"]++;
+                        break;
+                    case $eleventhValue == $twelvethValue:
+                    default:
+                        $drawArray["Canada"]++;
+                        $drawArray["Morocco"]++;
+                        $matchesArray["Morocco"]++;
+                        $matchesArray["Canada"]++;
+                };
+
+                // Goals for & Goals against teams
+
+                $goalsFor["Morocco"] = $firstValue + $sixthValue + $twelvethValue;
+                $goalsFor["Croatia"] = $secondValue + $seventhValue + $ninthValue;
+                $goalsFor["Belgium"] = $thirdValue + $fifthValue + $tenthValue;
+                $goalsFor["Canada"] = $fourthValue + $eighthValue + $eleventhValue;
+
+                $goalsAgainst["Morocco"] = $secondValue + $fifthValue + $eleventhValue;
+                $goalsAgainst["Croatia"] = $firstValue + $eighthValue + $tenthValue;
+                $goalsAgainst["Belgium"] = $fourthValue + $sixthValue + $ninthValue;
+                $goalsAgainst["Canada"] = $thirdValue + $seventhValue + $twelvethValue;
 
                 echo "<br>";
-                echo count($winArray);
 
-                echo "<table class='table table-bordered mt-5'>
+                $cars = array("Volvo", "BMW", "Toyota");
+                sort($cars);
+
+                $clength = count($cars);
+                for ($x = 0; $x < $clength; $x++) {
+                    echo $cars[$x];
+                    echo "<br>";
+                };
+
+                echo
+                "<table class='table table-bordered mt-5'>
                 <thead>
                     <tr>
                         <td>#</td>
@@ -149,72 +308,103 @@
                     </tr>
                 </thead>";
 
-                echo "<tbody>
-                    <tr>
+                echo "<tbody><tr>
                         <th scope='row'>1</th>
-                        <td>Morocco</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>$firstValue</td>
-                        <td>$secondValue</td>
-                        <td>";
-                echo $firstValue - $secondValue;
-                echo "</td>
-                    </tr>
-                    <tr>
+                        <td>Morocco</td><td>";
+                echo ($winArray["Morocco"] * 3) + $drawArray["Morocco"];
+                echo "</td><td>";
+                echo $matchesArray["Morocco"];
+                echo "</td><td>";
+                echo $winArray["Morocco"];
+                echo "</td><td>";
+                echo $drawArray["Morocco"];
+                echo "</td><td>";
+                echo $loseArray["Morocco"];
+                echo "</td><td>";
+                echo $goalsFor["Morocco"];
+                echo "</td><td>";
+                echo $goalsAgainst["Morocco"];
+                echo "</td><td>";
+                echo $goalsFor["Morocco"] - $goalsAgainst["Morocco"];
+                echo "</td></tr><tr>
                         <th scope='row'>2</th>
-                        <td>Croatia</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>$secondValue</td>
-                        <td>$firstValue</td>
-                        <td>";
-                echo $secondValue - $firstValue;
-                echo "</td>
-                    </tr>
-                    <tr>
+                        <td>Croatia</td><td>";
+                echo $winArray["Croatia"] * 3 + $drawArray["Croatia"];
+                echo "</td><td>";
+                echo $matchesArray["Croatia"];
+                echo "</td><td>";
+                echo $winArray["Croatia"];
+                echo "</td><td>";
+                echo $drawArray["Croatia"];
+                echo "</td><td>";
+                echo $loseArray["Croatia"];
+                echo "</td><td>";
+                echo $goalsFor["Croatia"];
+                echo "</td><td>";
+                echo $goalsAgainst["Croatia"];
+                echo "</td><td>";
+                echo $goalsFor["Croatia"] - $goalsAgainst["Croatia"];
+                echo "</td></tr><tr>
                         <th scope='row'>3</th>
-                        <td>Belgium</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>";
-                echo $firstValue - $secondValue;
-                echo "</td>
-                    </tr>
-                    <tr>
+                        <td>Belgium</td><td>";
+                echo $winArray["Belgium"] * 3 + $drawArray["Belgium"];
+                echo "</td><td>";
+                echo $matchesArray["Belgium"];
+                echo "</td><td>";
+                echo $winArray["Belgium"];
+                echo "</td><td>";
+                echo $drawArray["Belgium"];
+                echo "</td><td>";
+                echo $loseArray["Belgium"];
+                echo "</td><td>";
+                echo $goalsFor["Belgium"];
+                echo "</td><td>";
+                echo $goalsAgainst["Belgium"];
+                echo "</td><td>";
+                echo $goalsFor["Belgium"] - $goalsAgainst["Belgium"];
+                echo "</td></tr><tr>
                         <th scope='row'>4</th>
-                        <td>Canada</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>";
-                echo $firstValue - $secondValue;
-                echo "</td>
-                    </tr>
-                </tbody>
-                </table>";
+                        <td>Canada</td><td>";
+                echo $winArray["Canada"] * 3 + $drawArray["Canada"];
+                echo "</td><td>";
+                echo $matchesArray["Canada"];
+                echo "</td><td>";
+                echo $winArray["Canada"];
+                echo "</td><td>";
+                echo $drawArray["Canada"];
+                echo "</td><td>";
+                echo $loseArray["Canada"];
+                echo "</td><td>";
+                echo $goalsFor["Canada"];
+                echo "</td><td>";
+                echo $goalsAgainst["Canada"];
+                echo "</td><td>";
+                echo $goalsFor["Canada"] - $goalsAgainst["Canada"];
+                echo "</td></tr></tbody></table>";
+
+                // ::::::::::::::::::::::::::::::::::::::::: Sorting array code :::::::::::::::::::::::::::::::::::::::::
+
+                echo "<pre>";
+                print_r($goalsFor);
+                echo "</pre>";
+
+                sort($goalsFor);
+
+                $clength = count($goalsFor);
+                for ($x = 0; $x < $clength; $x++) {
+                    echo $goalsFor[$x];
+                    echo "<br>";
+                };
+
+                // ::::::::::::::::::::::::::::::::::::::::: Sorting array code :::::::::::::::::::::::::::::::::::::::::
+
+            };
+
+            if (isset($_POST['submitButton'])) {
+                createTable();
             }
 
-            createTable();
-
             ?>
-
-            <input class="btn btn-primary w-50" type="submit" name="submitButton" value="Submit">
 
         </form>
 
