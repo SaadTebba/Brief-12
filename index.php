@@ -11,403 +11,417 @@
 
 <body>
 
-    <div class="container text-center">
-
+    <div class="container text-center mt-3">
         <form method="POST">
+            <!-- :::::::::::::::::::::: Table of content :::::::::::::::::::::: -->
 
-            <!-- Table of content -->
+            <div class="row">
+                <div class="col-sm">
+                    <table class="table table-bordered mb-1">
+                        <thead>
+                            <tr>
+                                <th class="col-3 p-0">23 NOV - 11:00 H.</th>
+                                <th class="col-2 p-0">Score</th>
+                                <th class="col-3 p-0">MATCH 9</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/ma.svg" width="48" class="m-2"><br>Morocco</td>
+                                <td>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="firstScore" class="form-control">
+                                    </div>
+                                    <p class="d-inline-block">-</p>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="secondScore" class="form-control">
+                                    </div>
+                                </td>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/hr.svg" width="48" class="m-2"><br>Croatia</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-            <table class="table table-bordered mt-5">
+                    <table class="table table-bordered mb-1">
+                        <thead>
+                            <tr>
+                                <th class="col-3 p-0">23 NOV - 20:00 H.</th>
+                                <th class="col-2 p-0">Score</th>
+                                <th class="col-3 p-0">MATCH 12</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/be.svg" width="48" class="m-2"><br>Belgium</td>
+                                <td>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="thirdScore" class="form-control">
+                                    </div>
+                                    <p class="d-inline-block">-</p>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="fourthScore" class="form-control">
+                                    </div>
+                                </td>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/ca.svg" width="48" class="m-2"><br>Canada</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <thead>
-                    <tr>
-                        <th class="col-3">Team A</th>
-                        <th class="col-6">Score</th>
-                        <th class="col-3">Team B</th>
-                    </tr>
-                </thead>
+                    <table class="table table-bordered mb-1">
 
-                <tbody>
-                    <tr>
-                        <td>Morocco</td>
-                        <td>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="firstScore" class="form-control" required>
-                            </div>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="secondScore" class="form-control" required>
-                            </div>
-                        </td>
-                        <td>Croatia</td>
-                    </tr>
-                    <tr>
-                        <td>Belgium</td>
-                        <td>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="thirdScore" class="form-control" required>
-                            </div>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="fourthScore" class="form-control" required>
-                            </div>
-                        </td>
-                        <td>Canada</td>
-                    </tr>
-                    <tr>
-                        <td>Belgium</td>
-                        <td>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="fifthScore" class="form-control" required>
-                            </div>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="sixthScore" class="form-control" required>
-                            </div>
-                        </td>
-                        <td>Morocco</td>
-                    </tr>
-                    <tr>
-                        <td>Croatia</td>
-                        <td>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="seventhScore" class="form-control" required>
-                            </div>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="eighthScore" class="form-control" required>
-                            </div>
-                        </td>
-                        <td>Canada</td>
-                    </tr>
-                    <tr>
-                        <td>Croatia</td>
-                        <td>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="ninthScore" class="form-control" required>
-                            </div>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="tenthScore" class="form-control" required>
-                            </div>
-                        </td>
-                        <td>Belgium</td>
-                    </tr>
-                    <tr>
-                        <td>Canada</td>
-                        <td>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="eleventhScore" class="form-control" required>
-                            </div>
-                            <div class="form-outline d-inline-block" style="width: 8rem;">
-                                <input type="number" name="twelvethScore" class="form-control" required>
-                            </div>
-                        </td>
-                        <td>Morocco</td>
-                    </tr>
-                </tbody>
+                        <thead>
+                            <tr>
+                                <th class="col-3 p-0">27 NOV - 14:00 H.</th>
+                                <th class="col-2 p-0">Score</th>
+                                <th class="col-3 p-0">MATCH 26</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/be.svg" width="48" class="m-2"><br>Belgium</td>
+                                <td>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="fifthScore" class="form-control">
+                                    </div>
+                                    <p class="d-inline-block">-</p>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="sixthScore" class="form-control">
+                                    </div>
+                                </td>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/ma.svg" width="48" class="m-2"><br>Morocco</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-            </table>
+                    <table class="table table-bordered mb-1">
 
-            <input class="btn btn-primary" type="submit" name="submitButton" value="Submit">
+                        <thead>
+                            <tr>
+                                <th class="col-3 p-0">27 NOV - 17:00 H.</th>
+                                <th class="col-2 p-0">Score</th>
+                                <th class="col-3 p-0">MATCH 27</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/hr.svg" width="48" class="m-2"><br>Croatia</td>
+                                <td>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="seventhScore" class="form-control">
+                                    </div>
+                                    <p class="d-inline-block">-</p>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="eighthScore" class="form-control">
+                                    </div>
+                                </td>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/ca.svg" width="48" class="m-2"><br>Canada</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-            <!-- Table of results -->
+                    <table class="table table-bordered mb-1">
 
-            <?php
+                        <thead>
+                            <tr>
+                                <th class="col-3 p-0">01 DEC - 16:00 H.</th>
+                                <th class="col-2 p-0">Score</th>
+                                <th class="col-3 p-0">MATCH 41</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/hr.svg" width="48" class="m-2"><br>Croatia</td>
+                                <td>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="ninthScore" class="form-control">
+                                    </div>
+                                    <p class="d-inline-block">-</p>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="tenthScore" class="form-control">
+                                    </div>
+                                </td>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/be.svg" width="48" class="m-2"><br>Belgium</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-            // to sort: arsort(); - asort();
+                    <table class="table table-bordered mb-1">
 
-            function createTable()
-            {
+                        <thead>
+                            <tr>
+                                <th class="col-3 p-0">01 DEC - 16:00 H.</th>
+                                <th class="col-2 p-0">Score</th>
+                                <th class="col-3 p-0">MATCH 42</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/ca.svg" width="48" class="m-2"><br>Canada</td>
+                                <td>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="eleventhScore" class="form-control">
+                                    </div>
+                                    <p class="d-inline-block">-</p>
+                                    <div class="d-inline-block" style="width: 3rem;">
+                                        <input type="number" name="twelvethScore" class="form-control">
+                                    </div>
+                                </td>
+                                <td><img src="https://hatscripts.github.io/circle-flags/flags/ma.svg" width="48" class="m-2"><br>Morocco</td>
+                            </tr>
 
-                $matchesArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
-                $drawArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
-                $winArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
-                $loseArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
-                $goalsFor = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
-                $goalsAgainst = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                        </tbody>
+                    </table>
 
-                $firstValue = $_POST["firstScore"];
-                $secondValue = $_POST["secondScore"];
+                </div>
 
-                $thirdValue = $_POST["thirdScore"];
-                $fourthValue = $_POST["fourthScore"];
+                <!-- :::::::::::::::::::::: Table of results :::::::::::::::::::::: -->
 
-                $fifthValue = $_POST["fifthScore"];
-                $sixthValue = $_POST["sixthScore"];
+                <div class="col-sm">
+                    <?php
 
-                $seventhValue = $_POST["seventhScore"];
-                $eighthValue = $_POST["eighthScore"];
+                    function createTable()
+                    {
 
-                $ninthValue = $_POST["ninthScore"];
-                $tenthValue = $_POST["tenthScore"];
+                        $matchesArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                        $drawArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                        $winArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                        $loseArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                        $goalsFor = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                        $goalsAgainst = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
 
-                $eleventhValue = $_POST["eleventhScore"];
-                $twelvethValue = $_POST["twelvethScore"];
+                        $firstValue = $_POST["firstScore"];
+                        $secondValue = $_POST["secondScore"];
 
-                // Covers win & lose & draw cases
+                        $thirdValue = $_POST["thirdScore"];
+                        $fourthValue = $_POST["fourthScore"];
 
-                switch ($firstValue) {
-                    case $firstValue > $secondValue:
-                        $winArray["Morocco"]++;
-                        $loseArray["Croatia"]++;
-                        $matchesArray["Croatia"]++;
-                        $matchesArray["Morocco"]++;
-                        break;
-                    case $firstValue < $secondValue:
-                        $winArray["Croatia"]++;
-                        $loseArray["Morocco"]++;
-                        $matchesArray["Croatia"]++;
-                        $matchesArray["Morocco"]++;
-                        break;
-                    case $firstValue == $secondValue:
-                    default:
-                        $drawArray["Morocco"]++;
-                        $drawArray["Croatia"]++;
-                        $matchesArray["Croatia"]++;
-                        $matchesArray["Morocco"]++;
-                };
+                        $fifthValue = $_POST["fifthScore"];
+                        $sixthValue = $_POST["sixthScore"];
 
-                switch ($thirdValue) {
-                    case $thirdValue > $fourthValue:
-                        $winArray["Belgium"]++;
-                        $loseArray["Canada"]++;
-                        $matchesArray["Canada"]++;
-                        $matchesArray["Belgium"]++;
-                        break;
-                    case $thirdValue < $fourthValue:
-                        $winArray["Canada"]++;
-                        $loseArray["Belgium"]++;
-                        $matchesArray["Canada"]++;
-                        $matchesArray["Belgium"]++;
-                        break;
-                    case $thirdValue == $fourthValue:
-                    default:
-                        $drawArray["Belgium"]++;
-                        $drawArray["Canada"]++;
-                        $matchesArray["Canada"]++;
-                        $matchesArray["Belgium"]++;
-                };
+                        $seventhValue = $_POST["seventhScore"];
+                        $eighthValue = $_POST["eighthScore"];
 
-                switch ($fifthValue) {
-                    case $fifthValue > $sixthValue:
-                        $winArray["Belgium"]++;
-                        $loseArray["Morocco"]++;
-                        $matchesArray["Belgium"]++;
-                        $matchesArray["Morocco"]++;
-                        break;
-                    case $fifthValue < $sixthValue:
-                        $winArray["Morocco"]++;
-                        $loseArray["Belgium"]++;
-                        $matchesArray["Belgium"]++;
-                        $matchesArray["Morocco"]++;
-                        break;
-                    case $fifthValue == $sixthValue:
-                    default:
-                        $drawArray["Belgium"]++;
-                        $drawArray["Morocco"]++;
-                        $matchesArray["Belgium"]++;
-                        $matchesArray["Morocco"]++;
-                };
+                        $ninthValue = $_POST["ninthScore"];
+                        $tenthValue = $_POST["tenthScore"];
 
-                switch ($seventhValue) {
-                    case $seventhValue > $eighthValue:
-                        $winArray["Croatia"]++;
-                        $loseArray["Canada"]++;
-                        $matchesArray["Canada"]++;
-                        $matchesArray["Croatia"]++;
-                        break;
-                    case $seventhValue < $eighthValue:
-                        $winArray["Canada"]++;
-                        $loseArray["Croatia"]++;
-                        $matchesArray["Canada"]++;
-                        $matchesArray["Croatia"]++;
-                        break;
-                    case $seventhValue == $eighthValue:
-                    default:
-                        $drawArray["Croatia"]++;
-                        $drawArray["Canada"]++;
-                        $matchesArray["Canada"]++;
-                        $matchesArray["Croatia"]++;
-                };
+                        $eleventhValue = $_POST["eleventhScore"];
+                        $twelvethValue = $_POST["twelvethScore"];
 
-                switch ($ninthValue) {
-                    case $ninthValue > $tenthValue:
-                        $winArray["Croatia"]++;
-                        $loseArray["Belgium"]++;
-                        $matchesArray["Belgium"]++;
-                        $matchesArray["Croatia"]++;
-                        break;
-                    case $ninthValue < $tenthValue:
-                        $winArray["Belgium"]++;
-                        $loseArray["Croatia"]++;
-                        $matchesArray["Belgium"]++;
-                        $matchesArray["Croatia"]++;
-                        break;
-                    case $ninthValue == $tenthValue:
-                    default:
-                        $drawArray["Croatia"]++;
-                        $drawArray["Belgium"]++;
-                        $matchesArray["Belgium"]++;
-                        $matchesArray["Croatia"]++;
-                };
+                        if ($firstValue == "") $firstValue = 0;
+                        if ($secondValue == "") $secondValue = 0;
+                        if ($thirdValue == "") $thirdValue = 0;
+                        if ($fourthValue == "") $fourthValue = 0;
+                        if ($fifthValue == "") $fifthValue = 0;
+                        if ($sixthValue == "") $sixthValue = 0;
+                        if ($seventhValue == "") $seventhValue = 0;
+                        if ($eighthValue == "") $eighthValue = 0;
+                        if ($ninthValue == "") $ninthValue = 0;
+                        if ($tenthValue == "") $tenthValue = 0;
+                        if ($eleventhValue == "") $eleventhValue = 0;
+                        if ($twelvethValue == "") $twelvethValue = 0;
 
-                switch ($eleventhValue) {
-                    case $eleventhValue > $twelvethValue:
-                        $winArray["Canada"]++;
-                        $loseArray["Morocco"]++;
-                        $matchesArray["Morocco"]++;
-                        $matchesArray["Canada"]++;
-                        break;
-                    case $eleventhValue < $twelvethValue:
-                        $winArray["Morocco"]++;
-                        $loseArray["Canada"]++;
-                        $matchesArray["Morocco"]++;
-                        $matchesArray["Canada"]++;
-                        break;
-                    case $eleventhValue == $twelvethValue:
-                    default:
-                        $drawArray["Canada"]++;
-                        $drawArray["Morocco"]++;
-                        $matchesArray["Morocco"]++;
-                        $matchesArray["Canada"]++;
-                };
+                        // :::::::::::::::::::::: win & lose & draw Cases ::::::::::::::::::::::
 
-                // Goals for & Goals against teams
+                        if ($firstValue > $secondValue) {
+                            $winArray["Morocco"]++;
+                            $loseArray["Croatia"]++;
+                            $matchesArray["Croatia"]++;
+                            $matchesArray["Morocco"]++;
+                        } elseif ($firstValue < $secondValue) {
+                            $winArray["Croatia"]++;
+                            $loseArray["Morocco"]++;
+                            $matchesArray["Croatia"]++;
+                            $matchesArray["Morocco"]++;
+                        } else {
+                            $drawArray["Morocco"]++;
+                            $drawArray["Croatia"]++;
+                            $matchesArray["Croatia"]++;
+                            $matchesArray["Morocco"]++;
+                        };
 
-                $goalsFor["Morocco"] = $firstValue + $sixthValue + $twelvethValue;
-                $goalsFor["Croatia"] = $secondValue + $seventhValue + $ninthValue;
-                $goalsFor["Belgium"] = $thirdValue + $fifthValue + $tenthValue;
-                $goalsFor["Canada"] = $fourthValue + $eighthValue + $eleventhValue;
+                        if ($thirdValue > $fourthValue) {
+                            $winArray["Belgium"]++;
+                            $loseArray["Canada"]++;
+                            $matchesArray["Canada"]++;
+                            $matchesArray["Belgium"]++;
+                        } elseif ($thirdValue < $fourthValue) {
+                            $winArray["Canada"]++;
+                            $loseArray["Belgium"]++;
+                            $matchesArray["Canada"]++;
+                            $matchesArray["Belgium"]++;
+                        } else {
+                            $drawArray["Belgium"]++;
+                            $drawArray["Canada"]++;
+                            $matchesArray["Canada"]++;
+                            $matchesArray["Belgium"]++;
+                        };
 
-                $goalsAgainst["Morocco"] = $secondValue + $fifthValue + $eleventhValue;
-                $goalsAgainst["Croatia"] = $firstValue + $eighthValue + $tenthValue;
-                $goalsAgainst["Belgium"] = $fourthValue + $sixthValue + $ninthValue;
-                $goalsAgainst["Canada"] = $thirdValue + $seventhValue + $twelvethValue;
+                        if ($fifthValue > $sixthValue) {
+                            $winArray["Belgium"]++;
+                            $loseArray["Morocco"]++;
+                            $matchesArray["Morocco"]++;
+                            $matchesArray["Belgium"]++;
+                        } elseif ($fifthValue < $sixthValue) {
+                            $winArray["Morocco"]++;
+                            $loseArray["Belgium"]++;
+                            $matchesArray["Morocco"]++;
+                            $matchesArray["Belgium"]++;
+                        } else {
+                            $drawArray["Belgium"]++;
+                            $drawArray["Morocco"]++;
+                            $matchesArray["Morocco"]++;
+                            $matchesArray["Belgium"]++;
+                        };
 
-                echo "<br>";
+                        if ($seventhValue > $eighthValue) {
+                            $winArray["Croatia"]++;
+                            $loseArray["Canada"]++;
+                            $matchesArray["Canada"]++;
+                            $matchesArray["Croatia"]++;
+                        } elseif ($seventhValue < $eighthValue) {
+                            $winArray["Canada"]++;
+                            $loseArray["Croatia"]++;
+                            $matchesArray["Canada"]++;
+                            $matchesArray["Croatia"]++;
+                        } else {
+                            $drawArray["Croatia"]++;
+                            $drawArray["Canada"]++;
+                            $matchesArray["Canada"]++;
+                            $matchesArray["Croatia"]++;
+                        };
 
-                $cars = array("Volvo", "BMW", "Toyota");
-                sort($cars);
+                        if ($ninthValue > $tenthValue) {
+                            $winArray["Croatia"]++;
+                            $loseArray["Belgium"]++;
+                            $matchesArray["Belgium"]++;
+                            $matchesArray["Croatia"]++;
+                        } elseif ($ninthValue < $tenthValue) {
+                            $winArray["Belgium"]++;
+                            $loseArray["Croatia"]++;
+                            $matchesArray["Belgium"]++;
+                            $matchesArray["Croatia"]++;
+                        } else {
+                            $drawArray["Croatia"]++;
+                            $drawArray["Belgium"]++;
+                            $matchesArray["Belgium"]++;
+                            $matchesArray["Croatia"]++;
+                        };
 
-                $clength = count($cars);
-                for ($x = 0; $x < $clength; $x++) {
-                    echo $cars[$x];
-                    echo "<br>";
-                };
+                        if ($eleventhValue > $twelvethValue) {
+                            $winArray["Canada"]++;
+                            $loseArray["Morocco"]++;
+                            $matchesArray["Morocco"]++;
+                            $matchesArray["Canada"]++;
+                        } elseif ($eleventhValue < $twelvethValue) {
+                            $winArray["Morocco"]++;
+                            $loseArray["Canada"]++;
+                            $matchesArray["Morocco"]++;
+                            $matchesArray["Canada"]++;
+                        } else {
+                            $drawArray["Canada"]++;
+                            $drawArray["Morocco"]++;
+                            $matchesArray["Morocco"]++;
+                            $matchesArray["Canada"]++;
+                        };
 
-                echo
-                "<table class='table table-bordered mt-5'>
-                <thead>
-                    <tr>
-                        <td>#</td>
-                        <td>Teams</td>
-                        <td>Points</td>
-                        <td>Matches</td>
-                        <td>Wins</td>
-                        <td>Draws</td>
-                        <td>Loses</td>
-                        <td>Goals for</td>
-                        <td>Goals against</td>
-                        <td>+/-</td>
-                    </tr>
-                </thead>";
+                        // :::::::::::::::::::::: Goals for & Goals against teams ::::::::::::::::::::::
 
-                echo "<tbody><tr>
-                        <th scope='row'>1</th>
-                        <td>Morocco</td><td>";
-                echo ($winArray["Morocco"] * 3) + $drawArray["Morocco"];
-                echo "</td><td>";
-                echo $matchesArray["Morocco"];
-                echo "</td><td>";
-                echo $winArray["Morocco"];
-                echo "</td><td>";
-                echo $drawArray["Morocco"];
-                echo "</td><td>";
-                echo $loseArray["Morocco"];
-                echo "</td><td>";
-                echo $goalsFor["Morocco"];
-                echo "</td><td>";
-                echo $goalsAgainst["Morocco"];
-                echo "</td><td>";
-                echo $goalsFor["Morocco"] - $goalsAgainst["Morocco"];
-                echo "</td></tr><tr>
-                        <th scope='row'>2</th>
-                        <td>Croatia</td><td>";
-                echo $winArray["Croatia"] * 3 + $drawArray["Croatia"];
-                echo "</td><td>";
-                echo $matchesArray["Croatia"];
-                echo "</td><td>";
-                echo $winArray["Croatia"];
-                echo "</td><td>";
-                echo $drawArray["Croatia"];
-                echo "</td><td>";
-                echo $loseArray["Croatia"];
-                echo "</td><td>";
-                echo $goalsFor["Croatia"];
-                echo "</td><td>";
-                echo $goalsAgainst["Croatia"];
-                echo "</td><td>";
-                echo $goalsFor["Croatia"] - $goalsAgainst["Croatia"];
-                echo "</td></tr><tr>
-                        <th scope='row'>3</th>
-                        <td>Belgium</td><td>";
-                echo $winArray["Belgium"] * 3 + $drawArray["Belgium"];
-                echo "</td><td>";
-                echo $matchesArray["Belgium"];
-                echo "</td><td>";
-                echo $winArray["Belgium"];
-                echo "</td><td>";
-                echo $drawArray["Belgium"];
-                echo "</td><td>";
-                echo $loseArray["Belgium"];
-                echo "</td><td>";
-                echo $goalsFor["Belgium"];
-                echo "</td><td>";
-                echo $goalsAgainst["Belgium"];
-                echo "</td><td>";
-                echo $goalsFor["Belgium"] - $goalsAgainst["Belgium"];
-                echo "</td></tr><tr>
-                        <th scope='row'>4</th>
-                        <td>Canada</td><td>";
-                echo $winArray["Canada"] * 3 + $drawArray["Canada"];
-                echo "</td><td>";
-                echo $matchesArray["Canada"];
-                echo "</td><td>";
-                echo $winArray["Canada"];
-                echo "</td><td>";
-                echo $drawArray["Canada"];
-                echo "</td><td>";
-                echo $loseArray["Canada"];
-                echo "</td><td>";
-                echo $goalsFor["Canada"];
-                echo "</td><td>";
-                echo $goalsAgainst["Canada"];
-                echo "</td><td>";
-                echo $goalsFor["Canada"] - $goalsAgainst["Canada"];
-                echo "</td></tr></tbody></table>";
+                        $goalsFor["Morocco"] = $firstValue + $sixthValue + $twelvethValue;
+                        $goalsFor["Croatia"] = $secondValue + $seventhValue + $ninthValue;
+                        $goalsFor["Belgium"] = $thirdValue + $fifthValue + $tenthValue;
+                        $goalsFor["Canada"] = $fourthValue + $eighthValue + $eleventhValue;
 
-                // ::::::::::::::::::::::::::::::::::::::::: Sorting array code :::::::::::::::::::::::::::::::::::::::::
+                        $goalsAgainst["Morocco"] = $secondValue + $fifthValue + $eleventhValue;
+                        $goalsAgainst["Croatia"] = $firstValue + $eighthValue + $tenthValue;
+                        $goalsAgainst["Belgium"] = $fourthValue + $sixthValue + $ninthValue;
+                        $goalsAgainst["Canada"] = $thirdValue + $seventhValue + $twelvethValue;
 
-                echo "<pre>";
-                print_r($goalsFor);
-                echo "</pre>";
+                        // :::::::::::::::::::::: Creating & Filling table with values ::::::::::::::::::::::
 
-                sort($goalsFor);
+                        echo "<table class='table table-bordered'>
+                        <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Teams</th>
+                                    <th>PTS</th>
+                                    <th>GP</th>
+                                    <th>W</th>
+                                    <th>D</th>
+                                    <th>L</th>
+                                    <th>GF</th>
+                                    <th>GA</th>
+                                    <th>+/-</th>
+                                </tr>
+                        </thead>
 
-                $clength = count($goalsFor);
-                for ($x = 0; $x < $clength; $x++) {
-                    echo $goalsFor[$x];
-                    echo "<br>";
-                };
+                        <tbody>
+                                <tr> <th>1.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/ma.svg' width='48' class='m-2'><br>Morocco</td> <td>"
+                            . $winArray["Morocco"] * 3 + $drawArray["Morocco"] . "</td><td>"
+                            . $matchesArray["Morocco"] . "</td><td>"
+                            . $winArray["Morocco"] . "</td><td>"
+                            . $drawArray["Morocco"] . "</td><td>"
+                            . $loseArray["Morocco"] . "</td><td>"
+                            . $goalsFor["Morocco"] . "</td><td>"
+                            . $goalsAgainst["Morocco"] . "</td><td>"
+                            . $goalsFor["Morocco"] - $goalsAgainst["Morocco"] . "</td></tr> <tr> <th>2.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/hr.svg' width='48' class='m-2'><br>Croatia</td> <td>"
 
-                // ::::::::::::::::::::::::::::::::::::::::: Sorting array code :::::::::::::::::::::::::::::::::::::::::
+                            . $winArray["Croatia"] * 3 + $drawArray["Croatia"] . "</td><td>"
+                            . $matchesArray["Croatia"] . "</td><td>" . $winArray["Croatia"] . "</td><td>"
+                            . $drawArray["Croatia"] . "</td><td>"
+                            . $loseArray["Croatia"] . "</td><td>"
+                            . $goalsFor["Croatia"] . "</td><td>"
+                            . $goalsAgainst["Croatia"] . "</td><td>"
+                            . $goalsFor["Croatia"] - $goalsAgainst["Croatia"] . "</td></tr> <tr> <th>3.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/be.svg' width='48' class='m-2'><br>Belgium</td> <td>"
 
-            };
+                            . $winArray["Belgium"] * 3 + $drawArray["Belgium"] . "</td><td>"
+                            . $matchesArray["Belgium"] . "</td><td>"
+                            . $winArray["Belgium"] . "</td><td>"
+                            . $drawArray["Belgium"] . "</td><td>"
+                            . $loseArray["Belgium"] . "</td><td>"
+                            . $goalsFor["Belgium"] . "</td><td>"
+                            . $goalsAgainst["Belgium"] . "</td><td>"
+                            . $goalsFor["Belgium"] - $goalsAgainst["Belgium"] . "</td></tr> <tr> <th>4.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/ca.svg' width='48' class='m-2'><br>Canada</td> <td>"
 
-            if (isset($_POST['submitButton'])) {
-                createTable();
-            }
+                            . $winArray["Canada"] * 3 + $drawArray["Canada"] . "</td><td>"
+                            . $matchesArray["Canada"] . "</td><td>"
+                            . $winArray["Canada"] . "</td><td>"
+                            . $drawArray["Canada"] . "</td><td>"
+                            . $loseArray["Canada"] . "</td><td>"
+                            . $goalsFor["Canada"] . "</td><td>"
+                            . $goalsAgainst["Canada"] . "</td><td>"
+                            . $goalsFor["Canada"] - $goalsAgainst["Canada"] . "</td></tr>
+                        </tbody> </table>";
 
-            ?>
+                        // ::::::::::::::::::::::::::::::::::::::::: Sorting array code :::::::::::::::::::::::::::::::::::::::::
+
+                        // echo "<pre>";
+                        // print_r($goalsFor);
+                        // echo "</pre>";
+
+                        // sort($goalsFor);
+
+                        // $clength = count($goalsFor);
+                        // for ($x = 0; $x < $clength; $x++) {
+                        //     echo $goalsFor[$x];
+                        //     echo "<br>";
+                        // };
+
+                        // ::::::::::::::::::::::::::::::::::::::::: Sorting array code :::::::::::::::::::::::::::::::::::::::::
+
+                    };
+
+                    if (isset($_POST['submitButton'])) {
+                        createTable();
+                    }
+
+                    ?>
+                    <input class="btn btn-primary" type="submit" name="submitButton" value="Submit">
+                </div>
+            </div>
+
+            <!-- :::::::::::::::::::::: Submit Button :::::::::::::::::::::: -->
 
         </form>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
