@@ -13,9 +13,11 @@
 
     <div class="container text-center mt-3">
         <form method="POST">
-            <!-- :::::::::::::::::::::: Table of content :::::::::::::::::::::: -->
 
             <div class="row">
+
+                <!-- :::::::::::::::::::::: Table of content :::::::::::::::::::::: -->
+
                 <div class="col-sm">
                     <table class="table table-bordered mb-1">
                         <thead>
@@ -171,7 +173,6 @@
 
                         </tbody>
                     </table>
-
                 </div>
 
                 <!-- :::::::::::::::::::::: Table of results :::::::::::::::::::::: -->
@@ -182,12 +183,14 @@
                     function createTable()
                     {
 
+                        $pointsArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
                         $matchesArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
                         $drawArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
                         $winArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
                         $loseArray = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
                         $goalsFor = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
                         $goalsAgainst = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
+                        $goalsDifference = array("Morocco" => 0, "Croatia" => 0, "Belgium" => 0, "Canada" => 0);
 
                         $firstValue = $_POST["firstScore"];
                         $secondValue = $_POST["secondScore"];
@@ -324,7 +327,12 @@
                             $matchesArray["Canada"]++;
                         };
 
-                        // :::::::::::::::::::::: Goals for & Goals against teams ::::::::::::::::::::::
+                        // :::::::::::::::::::::: General points & Goals for & Goals against & Goals difference ::::::::::::::::::::::
+
+                        $pointsArray["Morocco"] = $winArray["Morocco"] * 3 + $drawArray["Morocco"];
+                        $pointsArray["Croatia"] = $winArray["Croatia"] * 3 + $drawArray["Croatia"];
+                        $pointsArray["Belgium"] = $winArray["Belgium"] * 3 + $drawArray["Belgium"];
+                        $pointsArray["Canada"] = $winArray["Canada"] * 3 + $drawArray["Canada"];
 
                         $goalsFor["Morocco"] = $firstValue + $sixthValue + $twelvethValue;
                         $goalsFor["Croatia"] = $secondValue + $seventhValue + $ninthValue;
@@ -335,6 +343,98 @@
                         $goalsAgainst["Croatia"] = $firstValue + $eighthValue + $tenthValue;
                         $goalsAgainst["Belgium"] = $fourthValue + $sixthValue + $ninthValue;
                         $goalsAgainst["Canada"] = $thirdValue + $seventhValue + $twelvethValue;
+
+                        $goalsDifference["Morocco"] = $goalsFor["Morocco"] - $goalsAgainst["Morocco"];
+                        $goalsDifference["Croatia"] = $goalsFor["Croatia"] - $goalsAgainst["Croatia"];
+                        $goalsDifference["Belgium"] = $goalsFor["Belgium"] - $goalsAgainst["Belgium"];
+                        $goalsDifference["Canada"] = $goalsFor["Canada"] - $goalsAgainst["Canada"];
+
+                        // :::::::::::::::::::::: Sorting ::::::::::::::::::::::
+
+                        arsort($pointsArray);
+                        arsort($goalsDifference);
+                        arsort($goalsFor);
+
+                        $firstTeam = array_keys($pointsArray)[0];
+                        $secondTeam = array_keys($pointsArray)[1];
+                        $thirdTeam = array_keys($pointsArray)[2];
+                        $fourthTeam = array_keys($pointsArray)[3];
+
+                        echo (array_values($pointsArray)[0]);
+                        echo "<br>";
+                        echo (array_values($pointsArray)[1]);
+                        echo "<br>";
+                        echo (array_values($pointsArray)[2]);
+                        echo "<br>";
+                        echo (array_values($pointsArray)[3]);
+                        echo "<br>";
+
+                        if (count($pointsArray) !== count(array_unique($pointsArray))) {
+
+                            echo "Some duplicates";
+                            $firstTeam = array_keys($goalsDifference)[0];
+                            $secondTeam = array_keys($goalsDifference)[1];
+                            $thirdTeam = array_keys($goalsDifference)[2];
+                            $fourthTeam = array_keys($goalsDifference)[3];
+
+                            if (count($goalsDifference) !== count(array_unique($goalsDifference))) {
+                                echo "<br>";
+                                echo "Some duplicates in goals differences";
+                                $firstTeam = array_keys($goalsFor)[0];
+                                $secondTeam = array_keys($goalsFor)[1];
+                                $thirdTeam = array_keys($goalsFor)[2];
+                                $fourthTeam = array_keys($goalsFor)[3];
+                            };
+                        };
+
+                        // echo $pointsArray[0];
+
+                        // create an array, push something in the array each time a condition is true... then if array length X condition number two starts applying...
+
+                        // if ($firstTeam = $secondTeam or $thirdTeam = $fourthTeam or $fourthTeam = $firstTeam or $firstTeam = $thirdTeam or $secondTeam = $fourthTeam) {
+
+                        //     $firstTeam = array_keys($goalsDifference)[0];
+                        //     $secondTeam = array_keys($goalsDifference)[1];
+                        //     $thirdTeam = array_keys($goalsDifference)[2];
+                        //     $fourthTeam = array_keys($goalsDifference)[3];
+
+                        //     if ($firstTeam = $secondTeam or $thirdTeam = $fourthTeam or $fourthTeam = $firstTeam or $firstTeam = $thirdTeam or $secondTeam = $fourthTeam) {
+
+                        //         $firstTeam = array_keys($goalsFor)[0];
+                        //         $secondTeam = array_keys($goalsFor)[1];
+                        //         $thirdTeam = array_keys($goalsFor)[2];
+                        //         $fourthTeam = array_keys($goalsFor)[3];
+
+                        //     }
+
+                        // };
+
+                        // :::::::::::::::::::::: Seting the right flag ::::::::::::::::::::::
+
+                        $firstTeamFlag = "";
+                        $secondTeamFlag = "";
+                        $thirdTeamFlag = "";
+                        $fourthTeamFlag = "";
+
+                        if ($firstTeam == "Morocco") $firstTeamFlag = "ma";
+                        elseif ($firstTeam == "Croatia") $firstTeamFlag = "hr";
+                        elseif ($firstTeam == "Belgium") $firstTeamFlag = "be";
+                        else $firstTeamFlag = "ca";
+
+                        if ($secondTeam == "Morocco") $secondTeamFlag = "ma";
+                        elseif ($secondTeam == "Croatia") $secondTeamFlag = "hr";
+                        elseif ($secondTeam == "Belgium") $secondTeamFlag = "be";
+                        else $secondTeamFlag = "ca";
+
+                        if ($thirdTeam == "Morocco") $thirdTeamFlag = "ma";
+                        elseif ($thirdTeam == "Croatia") $thirdTeamFlag = "hr";
+                        elseif ($thirdTeam == "Belgium") $thirdTeamFlag = "be";
+                        else $thirdTeamFlag = "ca";
+
+                        if ($fourthTeam == "Morocco") $fourthTeamFlag = "ma";
+                        elseif ($fourthTeam == "Croatia") $fourthTeamFlag = "hr";
+                        elseif ($fourthTeam == "Belgium") $fourthTeamFlag = "be";
+                        else $fourthTeamFlag = "ca";
 
                         // :::::::::::::::::::::: Creating & Filling table with values ::::::::::::::::::::::
 
@@ -355,59 +455,51 @@
                         </thead>
 
                         <tbody>
-                                <tr> <th>1.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/ma.svg' width='48' class='m-2'><br>Morocco</td> <td>"
-                            . $winArray["Morocco"] * 3 + $drawArray["Morocco"] . "</td><td>"
-                            . $matchesArray["Morocco"] . "</td><td>"
-                            . $winArray["Morocco"] . "</td><td>"
-                            . $drawArray["Morocco"] . "</td><td>"
-                            . $loseArray["Morocco"] . "</td><td>"
-                            . $goalsFor["Morocco"] . "</td><td>"
-                            . $goalsAgainst["Morocco"] . "</td><td>"
-                            . $goalsFor["Morocco"] - $goalsAgainst["Morocco"] . "</td></tr> <tr> <th>2.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/hr.svg' width='48' class='m-2'><br>Croatia</td> <td>"
 
-                            . $winArray["Croatia"] * 3 + $drawArray["Croatia"] . "</td><td>"
-                            . $matchesArray["Croatia"] . "</td><td>" . $winArray["Croatia"] . "</td><td>"
-                            . $drawArray["Croatia"] . "</td><td>"
-                            . $loseArray["Croatia"] . "</td><td>"
-                            . $goalsFor["Croatia"] . "</td><td>"
-                            . $goalsAgainst["Croatia"] . "</td><td>"
-                            . $goalsFor["Croatia"] - $goalsAgainst["Croatia"] . "</td></tr> <tr> <th>3.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/be.svg' width='48' class='m-2'><br>Belgium</td> <td>"
+                            <tr> <th>1.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$firstTeamFlag.svg' width='48' class='m-2'><br>
+                            $firstTeam</td> <td>"
+                            . $pointsArray[$firstTeam] . "</td><td>"
+                            . $matchesArray[$firstTeam] . "</td><td>"
+                            . $winArray[$firstTeam] . "</td><td>"
+                            . $drawArray[$firstTeam] . "</td><td>"
+                            . $loseArray[$firstTeam] . "</td><td>"
+                            . $goalsFor[$firstTeam] . "</td><td>"
+                            . $goalsAgainst[$firstTeam] . "</td><td>"
+                            . $goalsFor[$firstTeam] - $goalsAgainst[$firstTeam] . "</td></tr>
+                            
+                            <tr> <th>2.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$secondTeamFlag.svg' width='48' class='m-2'><br>
+                            $secondTeam</td> <td>"
+                            . $pointsArray[$secondTeam] . "</td><td>"
+                            . $matchesArray[$secondTeam] . "</td><td>" . $winArray[$secondTeam] . "</td><td>"
+                            . $drawArray[$secondTeam] . "</td><td>"
+                            . $loseArray[$secondTeam] . "</td><td>"
+                            . $goalsFor[$secondTeam] . "</td><td>"
+                            . $goalsAgainst[$secondTeam] . "</td><td>"
+                            . $goalsFor[$secondTeam] - $goalsAgainst[$secondTeam] . "</td></tr>
 
-                            . $winArray["Belgium"] * 3 + $drawArray["Belgium"] . "</td><td>"
-                            . $matchesArray["Belgium"] . "</td><td>"
-                            . $winArray["Belgium"] . "</td><td>"
-                            . $drawArray["Belgium"] . "</td><td>"
-                            . $loseArray["Belgium"] . "</td><td>"
-                            . $goalsFor["Belgium"] . "</td><td>"
-                            . $goalsAgainst["Belgium"] . "</td><td>"
-                            . $goalsFor["Belgium"] - $goalsAgainst["Belgium"] . "</td></tr> <tr> <th>4.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/ca.svg' width='48' class='m-2'><br>Canada</td> <td>"
+                            <tr> <th>3.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$thirdTeamFlag.svg' width='48' class='m-2'><br>
+                            $thirdTeam</td> <td>"
+                            . $pointsArray[$thirdTeam] . "</td><td>"
+                            . $matchesArray[$thirdTeam] . "</td><td>"
+                            . $winArray[$thirdTeam] . "</td><td>"
+                            . $drawArray[$thirdTeam] . "</td><td>"
+                            . $loseArray[$thirdTeam] . "</td><td>"
+                            . $goalsFor[$thirdTeam] . "</td><td>"
+                            . $goalsAgainst[$thirdTeam] . "</td><td>"
+                            . $goalsFor[$thirdTeam] - $goalsAgainst[$thirdTeam] . "</td></tr>
 
-                            . $winArray["Canada"] * 3 + $drawArray["Canada"] . "</td><td>"
-                            . $matchesArray["Canada"] . "</td><td>"
-                            . $winArray["Canada"] . "</td><td>"
-                            . $drawArray["Canada"] . "</td><td>"
-                            . $loseArray["Canada"] . "</td><td>"
-                            . $goalsFor["Canada"] . "</td><td>"
-                            . $goalsAgainst["Canada"] . "</td><td>"
-                            . $goalsFor["Canada"] - $goalsAgainst["Canada"] . "</td></tr>
+                            <tr> <th>4.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$fourthTeamFlag.svg' width='48' class='m-2'><br>
+                            $fourthTeam </td> <td>"
+                            . $pointsArray[$fourthTeam] . "</td><td>"
+                            . $matchesArray[$fourthTeam] . "</td><td>"
+                            . $winArray[$fourthTeam] . "</td><td>"
+                            . $drawArray[$fourthTeam] . "</td><td>"
+                            . $loseArray[$fourthTeam] . "</td><td>"
+                            . $goalsFor[$fourthTeam] . "</td><td>"
+                            . $goalsAgainst[$fourthTeam] . "</td><td>"
+                            . $goalsFor[$fourthTeam] - $goalsAgainst[$fourthTeam] . "</td></tr>
+
                         </tbody> </table>";
-
-                        // ::::::::::::::::::::::::::::::::::::::::: Sorting array code :::::::::::::::::::::::::::::::::::::::::
-
-                        // echo "<pre>";
-                        // print_r($goalsFor);
-                        // echo "</pre>";
-
-                        // sort($goalsFor);
-
-                        // $clength = count($goalsFor);
-                        // for ($x = 0; $x < $clength; $x++) {
-                        //     echo $goalsFor[$x];
-                        //     echo "<br>";
-                        // };
-
-                        // ::::::::::::::::::::::::::::::::::::::::: Sorting array code :::::::::::::::::::::::::::::::::::::::::
-
                     };
 
                     if (isset($_POST['submitButton'])) {
@@ -417,9 +509,8 @@
                     ?>
                     <input class="btn btn-primary" type="submit" name="submitButton" value="Submit">
                 </div>
-            </div>
 
-            <!-- :::::::::::::::::::::: Submit Button :::::::::::::::::::::: -->
+            </div>
 
         </form>
     </div>
