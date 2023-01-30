@@ -289,18 +289,19 @@
                             $secondTeam = array_keys($goalsDifference)[1];
                             $thirdTeam = array_keys($goalsDifference)[2];
                             $fourthTeam = array_keys($goalsDifference)[3];
+                            
+                            if (count($goalsDifference) !== count(array_unique($goalsDifference))) {
+                                    
+                                echo "<br>";
+                                echo "Some duplicates in goals differences";
+    
+                                $firstTeam = array_keys($goalsFor)[0];
+                                $secondTeam = array_keys($goalsFor)[1];
+                                $thirdTeam = array_keys($goalsFor)[2];
+                                $fourthTeam = array_keys($goalsFor)[3];
+                            };
                         };
 
-                        if (count($goalsDifference) !== count(array_unique($goalsDifference))) {
-                                
-                            echo "<br>";
-                            echo "Some duplicates in goals differences";
-
-                            $firstTeam = array_keys($goalsFor)[0];
-                            $secondTeam = array_keys($goalsFor)[1];
-                            $thirdTeam = array_keys($goalsFor)[2];
-                            $fourthTeam = array_keys($goalsFor)[3];
-                        };
 
                         echo "<br>";
                         echo (array_values($pointsArray)[0]);
