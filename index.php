@@ -281,7 +281,13 @@
                         $thirdTeam = array_keys($pointsArray)[2];
                         $fourthTeam = array_keys($pointsArray)[3];
 
+                        print_r($pointsArray);
+                        echo "<br>";
+
                         if (count($pointsArray) !== count(array_unique($pointsArray))) {
+
+                            print_r($pointsArray);
+                            echo "<br>";
 
                             echo "Some duplicates";
 
