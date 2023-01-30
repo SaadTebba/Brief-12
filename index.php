@@ -452,54 +452,75 @@
                                     <th>GA</th>
                                     <th>+/-</th>
                                 </tr>
-                        </thead>
+                        </thead>";
 
-                        <tbody>
+                        echo "<tbody>";
 
-                            <tr> <th>1.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$firstTeamFlag.svg' width='48' class='m-2'><br>
-                            $firstTeam</td> <td>"
-                            . $pointsArray[$firstTeam] . "</td><td>"
-                            . $matchesArray[$firstTeam] . "</td><td>"
-                            . $winArray[$firstTeam] . "</td><td>"
-                            . $drawArray[$firstTeam] . "</td><td>"
-                            . $loseArray[$firstTeam] . "</td><td>"
-                            . $goalsFor[$firstTeam] . "</td><td>"
-                            . $goalsAgainst[$firstTeam] . "</td><td>"
-                            . $goalsFor[$firstTeam] - $goalsAgainst[$firstTeam] . "</td></tr>
-                            
-                            <tr> <th>2.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$secondTeamFlag.svg' width='48' class='m-2'><br>
-                            $secondTeam</td> <td>"
-                            . $pointsArray[$secondTeam] . "</td><td>"
-                            . $matchesArray[$secondTeam] . "</td><td>" . $winArray[$secondTeam] . "</td><td>"
-                            . $drawArray[$secondTeam] . "</td><td>"
-                            . $loseArray[$secondTeam] . "</td><td>"
-                            . $goalsFor[$secondTeam] . "</td><td>"
-                            . $goalsAgainst[$secondTeam] . "</td><td>"
-                            . $goalsFor[$secondTeam] - $goalsAgainst[$secondTeam] . "</td></tr>
+                        function tableRow($targetedTeam, $targetedTeamFlag) {
 
-                            <tr> <th>3.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$thirdTeamFlag.svg' width='48' class='m-2'><br>
-                            $thirdTeam</td> <td>"
-                            . $pointsArray[$thirdTeam] . "</td><td>"
-                            . $matchesArray[$thirdTeam] . "</td><td>"
-                            . $winArray[$thirdTeam] . "</td><td>"
-                            . $drawArray[$thirdTeam] . "</td><td>"
-                            . $loseArray[$thirdTeam] . "</td><td>"
-                            . $goalsFor[$thirdTeam] . "</td><td>"
-                            . $goalsAgainst[$thirdTeam] . "</td><td>"
-                            . $goalsFor[$thirdTeam] - $goalsAgainst[$thirdTeam] . "</td></tr>
+                            global $pointsArray, $matchesArray, $winArray, $drawArray, $loseArray, $goalsFor, $goalsAgainst;
 
-                            <tr> <th>4.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$fourthTeamFlag.svg' width='48' class='m-2'><br>
-                            $fourthTeam </td> <td>"
-                            . $pointsArray[$fourthTeam] . "</td><td>"
-                            . $matchesArray[$fourthTeam] . "</td><td>"
-                            . $winArray[$fourthTeam] . "</td><td>"
-                            . $drawArray[$fourthTeam] . "</td><td>"
-                            . $loseArray[$fourthTeam] . "</td><td>"
-                            . $goalsFor[$fourthTeam] . "</td><td>"
-                            . $goalsAgainst[$fourthTeam] . "</td><td>"
-                            . $goalsFor[$fourthTeam] - $goalsAgainst[$fourthTeam] . "</td></tr>
+                            return "<tr> <th>1.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$targetedTeamFlag.svg' width='48' class='m-2'><br>
+                            $targetedTeam</td> <td>"
+                                . $pointsArray[$targetedTeam] . "</td><td>"
+                                . $matchesArray[$targetedTeam] . "</td><td>"
+                                . $winArray[$targetedTeam] . "</td><td>"
+                                . $drawArray[$targetedTeam] . "</td><td>"
+                                . $loseArray[$targetedTeam] . "</td><td>"
+                                . $goalsFor[$targetedTeam] . "</td><td>"
+                                . $goalsAgainst[$targetedTeam] . "</td><td>"
+                                . $goalsFor[$targetedTeam] - $goalsAgainst[$targetedTeam] . "</td></tr>";
+                        };
 
-                        </tbody> </table>";
+                        echo tableRow($firstTeam, $firstTeamFlag);
+                        echo tableRow($secondTeam, $secondTeamFlag);
+                        echo tableRow($thirdTeam, $thirdTeamFlag);
+                        echo tableRow($fourthTeam, $fourthTeamFlag);
+
+                        // <tr> <th>1.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$firstTeamFlag.svg' width='48' class='m-2'><br>
+                        // $firstTeam</td> <td>"
+                        // . $pointsArray[$firstTeam] . "</td><td>"
+                        // . $matchesArray[$firstTeam] . "</td><td>"
+                        // . $winArray[$firstTeam] . "</td><td>"
+                        // . $drawArray[$firstTeam] . "</td><td>"
+                        // . $loseArray[$firstTeam] . "</td><td>"
+                        // . $goalsFor[$firstTeam] . "</td><td>"
+                        // . $goalsAgainst[$firstTeam] . "</td><td>"
+                        // . $goalsFor[$firstTeam] - $goalsAgainst[$firstTeam] . "</td></tr>
+
+                        // <tr> <th>2.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$secondTeamFlag.svg' width='48' class='m-2'><br>
+                        // $secondTeam</td> <td>"
+                        // . $pointsArray[$secondTeam] . "</td><td>"
+                        // . $matchesArray[$secondTeam] . "</td><td>" . $winArray[$secondTeam] . "</td><td>"
+                        // . $drawArray[$secondTeam] . "</td><td>"
+                        // . $loseArray[$secondTeam] . "</td><td>"
+                        // . $goalsFor[$secondTeam] . "</td><td>"
+                        // . $goalsAgainst[$secondTeam] . "</td><td>"
+                        // . $goalsFor[$secondTeam] - $goalsAgainst[$secondTeam] . "</td></tr>
+
+                        // <tr> <th>3.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$thirdTeamFlag.svg' width='48' class='m-2'><br>
+                        // $thirdTeam</td> <td>"
+                        // . $pointsArray[$thirdTeam] . "</td><td>"
+                        // . $matchesArray[$thirdTeam] . "</td><td>"
+                        // . $winArray[$thirdTeam] . "</td><td>"
+                        // . $drawArray[$thirdTeam] . "</td><td>"
+                        // . $loseArray[$thirdTeam] . "</td><td>"
+                        // . $goalsFor[$thirdTeam] . "</td><td>"
+                        // . $goalsAgainst[$thirdTeam] . "</td><td>"
+                        // . $goalsFor[$thirdTeam] - $goalsAgainst[$thirdTeam] . "</td></tr>
+
+                        // <tr> <th>4.</th> <td><img src='https://hatscripts.github.io/circle-flags/flags/$fourthTeamFlag.svg' width='48' class='m-2'><br>
+                        // $fourthTeam </td> <td>"
+                        // . $pointsArray[$fourthTeam] . "</td><td>"
+                        // . $matchesArray[$fourthTeam] . "</td><td>"
+                        // . $winArray[$fourthTeam] . "</td><td>"
+                        // . $drawArray[$fourthTeam] . "</td><td>"
+                        // . $loseArray[$fourthTeam] . "</td><td>"
+                        // . $goalsFor[$fourthTeam] . "</td><td>"
+                        // . $goalsAgainst[$fourthTeam] . "</td><td>"
+                        // . $goalsFor[$fourthTeam] - $goalsAgainst[$fourthTeam] . "</td></tr>";
+
+                        echo "</tbody> </table>";
                     };
 
                     if (isset($_POST['submitButton'])) {
