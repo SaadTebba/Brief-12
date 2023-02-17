@@ -219,7 +219,8 @@
 
                         // :::::::::::::::::::::: win & lose & draw Cases ::::::::::::::::::::::
 
-                        function comparingScores($team1, $team2, $value1, $value2) {
+                        function comparingScores($team1, $team2, $value1, $value2)
+                        {
 
                             global $matchesArray, $winArray, $drawArray, $loseArray;
 
@@ -272,6 +273,8 @@
 
                         // :::::::::::::::::::::: Sorting ::::::::::::::::::::::
 
+                        $testingNewArray = array($pointsArray, $goalsDifference, $goalsFor);
+
                         arsort($pointsArray);
                         arsort($goalsDifference);
                         arsort($goalsFor);
@@ -281,43 +284,28 @@
                         $thirdTeam = array_keys($pointsArray)[2];
                         $fourthTeam = array_keys($pointsArray)[3];
 
-                        print_r($pointsArray);
-                        echo "<br>";
-
                         if (count($pointsArray) !== count(array_unique($pointsArray))) {
-
-                            print_r($pointsArray);
+                            
                             echo "<br>";
-
+                            
                             echo "Some duplicates";
 
                             $firstTeam = array_keys($goalsDifference)[0];
                             $secondTeam = array_keys($goalsDifference)[1];
                             $thirdTeam = array_keys($goalsDifference)[2];
                             $fourthTeam = array_keys($goalsDifference)[3];
-                            
+
                             if (count($goalsDifference) !== count(array_unique($goalsDifference))) {
-                                    
+
                                 echo "<br>";
                                 echo "Some duplicates in goals differences";
-    
+
                                 $firstTeam = array_keys($goalsFor)[0];
                                 $secondTeam = array_keys($goalsFor)[1];
                                 $thirdTeam = array_keys($goalsFor)[2];
                                 $fourthTeam = array_keys($goalsFor)[3];
                             };
                         };
-
-
-                        echo "<br>";
-                        echo (array_values($pointsArray)[0]);
-                        echo "<br>";
-                        echo (array_values($pointsArray)[1]);
-                        echo "<br>";
-                        echo (array_values($pointsArray)[2]);
-                        echo "<br>";
-                        echo (array_values($pointsArray)[3]);
-                        echo "<br>";
 
                         // :::::::::::::::::::::: Seting the right flag ::::::::::::::::::::::
 
@@ -367,7 +355,8 @@
 
                         echo "<tbody>";
 
-                        function tableRow($targetedTeam, $targetedTeamFlag, $teamClassement) {
+                        function tableRow($targetedTeam, $targetedTeamFlag, $teamClassement)
+                        {
 
                             global $pointsArray, $matchesArray, $winArray, $drawArray, $loseArray, $goalsFor, $goalsAgainst;
 
